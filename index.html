@@ -5,13 +5,13 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Epicodus Track Suggester</title>
+    <title>Epicodus Track Suggester (Back-end)</title>
   </head>
   <body>
     <div class="container">
-      <h1>Epicodus Track Suggester</h1>
-      <h2>Welcome! I understand you are interested in taking a course here at Epicodus? Wonderful! You've come to the right place! Please enter some information below so that I may help pair you with the best track to suit your specific needs:</h2>
-      <form id="contact">
+      <div class="jumbotron"><h1>Epicodus Track Suggester (Back-end)</h1></div>
+      <h4>Welcome! I understand you are interested in taking a course here at Epicodus? Wonderful! You've come to the right place! Please enter some information below so that I may help pair you with the best track to suit your specific needs:</h4>
+      <form id="survey">
         <div class="form-group">
           <label for="student">Name:</label>
           <input id="studentName" class="form-control" type="text">
@@ -24,9 +24,79 @@
           <label for="born">Date of birth:</label>
           <input id="born" class="form-control" type="date">
         </div>
-
-
+        <h3>Survey Questionnaire:</h3>
+        <p>What type of company do you hope to attain a position within?
+        <select class="form-control" id="company">
+          <option value="NaN"></option>
+          <option value="10">Large enterprise company</option>
+          <option value="1">Agency that specializes in building websites</option>
+          <option value="0">Startups and smaller companies</option>
+        </select>
+        <p>What kind of software are you interested in building?</p>
+        <select class="form-control" id="software">
+          <option value="NaN"></option>
+          <option value="50">
+            Internal business software for large enterprise companies
+          </option>
+          <option value="5">High performance processing/Android applications</option>
+          <option value="1">Content-heavy sites with little user interaction</option>
+          <option value="0">Interactive web applications</option>
+        </select>
+        <h5>Is the statement below important to you?:</h5>
+        <p>Language has a high-demand from large enterprise companies/corporations.</p>
+        <div id="demand">
+          <div class="radio">
+            <label>
+              <input type="radio" name="demand" value="10">
+              True
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="demand" value="0">
+              False
+            </label>
+          </div>
+        </div>
+        <h5>Is the statement below applicable to you?:</h5>
+        <p>Interested in creating content management systems such as Wordpress, Drupal, and Joomla.</p>
+        <div id="contentMan">
+          <div class="radio">
+            <label>
+              <input type="radio" name="content" value="1">
+              True
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="content" value="0">
+              False
+            </label>
+          </div>
+        </div>
+        <h5>Is the statement below applicable to you?:</h5>
+        <p>Interested in building products and web applications as quickly as possible (Such as for startups and entrepreneurs).</p>
+        <div id="quickWebApp">
+          <div class="radio">
+            <label>
+              <input type="radio" name="quick" value="0">
+              True
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="quick" value="1">
+              False
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit!</button>
       </form>
+      <div id="resultOutput">
+        <p>
+          Based upon your input, I would recommend <span id="resultTrack">#</span>. I believe this track encompasses everything that you would like to learn.
+        </p>
+      </div>
     </div>
   </body>
 </html>
