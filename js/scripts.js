@@ -18,13 +18,11 @@ $(document).ready(function() {
         resultTrack = "Ruby";
     }
 
-    $("#resultOutput").show();
+    $("#resultOutput").fadeIn();
     $("#resultTrack").text(resultTrack);
     $("#nameOutput").text(name);
     $("#emailOutput").text(email);
 
-    console.log("name is: " + name);
-    console.log("email is: " + email);
     event.preventDefault();
 
   });

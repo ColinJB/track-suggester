@@ -1,5 +1,16 @@
+h2 {
+  font-size: 40px;
+  margin-right: 40px;
+  font-weight: bold;
+}
+
 #resultOutput {
   display: none;
+  margin-top: 40px;
+}
+
+.jumbotron {
+  border: solid 4px #99c2ff;
 }
 
 .btn {
