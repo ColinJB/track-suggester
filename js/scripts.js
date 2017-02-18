@@ -18,6 +18,7 @@ $(document).ready(function() {
         resultTrack = "Ruby";
     }
 
+
     $("#resultOutput").fadeIn();
     $("#resultTrack").text(resultTrack);
     $("#nameOutput").text(name);

@@ -9,8 +9,10 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron"><h2>Epicodus Track Suggester <small>(Back-end)</small></h2></div>
-      <h4>Welcome! I understand you are interested in taking a course here at Epicodus? <strong>Wonderful!</strong> You've come to the right place! Please enter some information below so that I may help pair you with the best track to suit your specific needs:</h4>
+      <div id="first" class="jumbotron">
+        <h2>Epicodus Track Suggester <small><span id="back">(Back-end)</span></small></h2>
+      </div>
+      <p id="welcome">Welcome! I understand you are interested in taking a course here at Epicodus? <strong>Wonderful!</strong> You've come to the right place! Please enter some information below so that I may help pair you with the best track to suit your specific needs:</p>
       <form id="survey">
         <div class="form-group">
           <label for="student">Name:</label>
@@ -24,79 +26,90 @@
           <label for="born">Date of birth:</label>
           <input id="born" class="form-control" type="date">
         </div>
-        <h3>Survey Questionnaire:</h3>
-        <p>What type of company do you hope to attain a position within?</p>
-        <select class="form-control" id="company">
-          <option value="NaN"></option>
-          <option value="10">Large enterprise company</option>
-          <option value="1">Agency that specializes in building websites</option>
-          <option value="0">Startups and smaller companies</option>
-        </select>
-        <p>What kind of software are you interested in building?</p>
-        <select class="form-control" id="software">
-          <option value="NaN"></option>
-          <option value="50">
-            Internal business software for large enterprise companies
-          </option>
-          <option value="5">High performance processing/Android applications</option>
-          <option value="1">Content-heavy sites with little user interaction</option>
-          <option value="0">Interactive web applications</option>
-        </select>
-        <h5>Is the statement below important to you?:</h5>
-        <p>Language has a high-demand from large enterprise companies/corporations.</p>
-        <div id="demand">
-          <div class="radio">
-            <label>
-              <input type="radio" name="demand" value="10">
-              True
-            </label>
+        <div class="well well-sm"><h3><strong>Survey Questionnaire:</strong></h3></div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="drop1">
+              <p class="Title">What type of company do you hope to attain a position within?</p>
+              <select class="form-control" id="company">
+                <option value="NaN"></option>
+                <option value="10">Large enterprise company</option>
+                <option value="1">Agency that specializes in building websites</option>
+                <option value="0">Startups and smaller companies</option>
+              </select>
+            </div>
+            <div class="drop2">
+              <p class="Title">What kind of software are you interested in building?</p>
+              <select class="form-control" id="software">
+                <option value="NaN"></option>
+                <option value="50">
+                  Internal business software for large enterprise companies
+                </option>
+                <option value="5">High performance processing/Android applications</option>
+                <option value="1">Content-heavy sites with little user interaction</option>
+                <option value="0">Interactive web applications</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Submit!</button>
           </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="demand" value="0">
-              False
-            </label>
+          <div class="col-md-6">
+            <p id="radios" class="Title">Is the statement below important to you?:</p>
+            <p>Language has a high-demand from large enterprise companies/corporations.</p>
+            <div id="demand">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="demand" value="10">
+                  True
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="demand" value="0">
+                  False
+                </label>
+              </div>
+            </div>
+            <p class="Title">Is the statement below applicable to you?:</p>
+            <p>Interested in creating content management systems such as Wordpress, Drupal, and Joomla.</p>
+            <div id="contentMan">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="content" value="1">
+                  True
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="content" value="0">
+                  False
+                </label>
+              </div>
+            </div>
+            <p class="Title">Is the statement below applicable to you?:</p>
+            <p>Interested in building products and web applications as quickly as possible (Such as for startups and entrepreneurs).</p>
+            <div id="quickWebApp">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="quick" value="0">
+                  True
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="quick" value="1">
+                  False
+                </label>
+              </div>
+            </div>
           </div>
         </div>
-        <h5>Is the statement below applicable to you?:</h5>
-        <p>Interested in creating content management systems such as Wordpress, Drupal, and Joomla.</p>
-        <div id="contentMan">
-          <div class="radio">
-            <label>
-              <input type="radio" name="content" value="1">
-              True
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="content" value="0">
-              False
-            </label>
-          </div>
-        </div>
-        <h5>Is the statement below applicable to you?:</h5>
-        <p>Interested in building products and web applications as quickly as possible (Such as for startups and entrepreneurs).</p>
-        <div id="quickWebApp">
-          <div class="radio">
-            <label>
-              <input type="radio" name="quick" value="0">
-              True
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="quick" value="1">
-              False
-            </label>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit!</button>
       </form>
       <div id="resultOutput">
         <div class="jumbotron"><p>
           Based upon your input, <span id="nameOutput"></span>, I would recommend the <strong><span id="resultTrack"></span></strong> track. I believe this track encompasses everything that you would like to learn. More information about this language and the course we offer for it will be sent to you at <strong><span id="emailOutput"></span></strong>.</div>
         </p>
       </div>
+      <p id="end">Thanks for considering <a href="https://www.epicodus.com/">Epicodus!</a><img src="img/e.png"></p>
     </div>
   </body>
 </html>
